@@ -1,3 +1,7 @@
+import Pen from "../class/Pen.class.js";
+import ColorPalette from "../class/ColorPalette.class.js";
+import Slate from "../class/Slate.class.js";
+
 class Program {
 
     constructor(){
@@ -5,6 +9,11 @@ class Program {
         // - ColorPalette
         // - Pen
         // - Slate
+
+        const zoneDraw = new Slate();
+        const myPen = new Pen();
+        const colorSelector = new ColorPalette();
+        
 
 
     }
@@ -36,12 +45,6 @@ class Program {
     }
 
 
-
-
-
-
-
-
-
-
 }
+
+export default Program

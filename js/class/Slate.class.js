@@ -1,9 +1,12 @@
+import Program from "../class/Program.class.js";
+import Pen from "../class/Pen.class.js";
+import ColorPalette from "../class/ColorPalette.class.js";
+
 class Slate {
     // le constructor reçoit un argument
     constructor(){
 
         // récupération du canvas, du context
-
 
         // au début, on ne sait pas où se trouve la souris (currentLocation)
 
@@ -36,3 +39,5 @@ class Slate {
 
 
 }
+
+export default Slate

@@ -1,3 +1,7 @@
+import Program from "../class/Program.class.js";
+import ColorPalette from "../class/ColorPalette.class.js";
+import Slate from "../class/Slate.class.js";
+
 class Pen {
     constructor(){
         // initialiser 2 propriétés avec des valeurs par defaut
@@ -18,3 +22,5 @@ class Pen {
     // methode pour appliquer une couleur rgb au crayon
 
 }
+
+export default Pen;
