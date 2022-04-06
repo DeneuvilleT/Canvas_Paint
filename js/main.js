@@ -1,7 +1,10 @@
+import Program from "./class/Program.class.js";
+import Slate from "./class/Slate.class.js";
+import ColorPalette from "./class/ColorPalette.class.js";
+import Pen from "./class/Pen.class.js";
 
-
-//document.addEventListener('CONTENTLoaded', () => {
-
+document.addEventListener('DOMContentLoaded', () => {
+    const newApp = new Program();
 })
 
 
