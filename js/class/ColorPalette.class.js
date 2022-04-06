@@ -6,7 +6,7 @@ class ColorPalette {
 
     constructor(canvas, context) {
         // récupérer le canvas/context
-        this.context = context;
+        this.context = this.context;
         this.canvas = canvas;
         // initialiser une proriété rgb (objet ??)
         this.rgb = {
@@ -18,12 +18,12 @@ class ColorPalette {
         
 
         // appeler la methode pour Build() la palette
-        this.build()
+        this.buildGradiant()
 
     }
 
     // méthode de construction graphique de la palette de couleurs
-    build() {
+    buildGradiant() {
 
 
 
@@ -44,6 +44,6 @@ class ColorPalette {
 
 
 
-}
+};
 
-export default ColorPalette
+export default ColorPalette;
