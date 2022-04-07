@@ -6,17 +6,17 @@ import Slate from "../class/Slate.class.js";
 class Program {
     constructor() {
 
-        this.pen = new Pen();
-        this.newSlate = new Slate(this.pen);
+        this.newPen = new Pen();
+        this.newSlate = new Slate(this.newPen);
         this.newColorPalette = new ColorPalette();
         this.lunchApp();
     };
 
     onClickPenColor(e) {
-        this.pen.color = e.path[0].attributes[1].textContent;
+        this.newPen.color = e.path[0].attributes[1].textContent;
     };
     onClickPenSize(e) {
-        this.pen.size = e.path[0].attributes[1].textContent;
+        this.newPen.size = e.path[0].attributes[1].textContent;
     };
 
     lunchApp() {
@@ -65,7 +65,7 @@ class Program {
         });
 
         palette.addEventListener('click', (e) => {
-            this.pen.color = this.newColorPalette.onClickPalet(e);
+            this.newPen.color = this.newColorPalette.onClickPalet(e);
         });
     };
 };

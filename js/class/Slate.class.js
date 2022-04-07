@@ -2,8 +2,8 @@ import Pen from "./Pen.class.js";
 
 class Slate {
 
-    constructor(pen) {
-        this.pen = pen;
+    constructor(newPen) {
+        this.newPen = newPen;
         this.canvas = canvas
         this.context = this.canvas.getContext("2d");
         this.isDrawing = false;
@@ -13,12 +13,12 @@ class Slate {
         };
     };
     
-    draw(x2, y2) {
+    draw(x, y) {
         this.context.beginPath();
-        this.context.strokeStyle = this.pen.color;
-        this.context.lineWidth = this.pen.size;
+        this.context.strokeStyle = this.newPen.color;
+        this.context.lineWidth = this.newPen.size;
         this.context.moveTo(this.position.x, this.position.y);
-        this.context.lineTo(x2, y2);
+        this.context.lineTo(x, y);
         this.context.stroke();
         this.context.closePath();
     };
