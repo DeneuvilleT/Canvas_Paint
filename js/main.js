@@ -1,13 +1,15 @@
 import Program from "./class/Program.class.js";
 
 document.addEventListener('DOMContentLoaded', () => {
-    const newApp = new Program();
 
+    const newApp = new Program();
+    
     document.querySelectorAll('.pen-color').forEach((e) => {
         e.addEventListener('click', (e) => {
             newApp.onClickPenColor(e);
         });
     });
+
     document.querySelectorAll('.pen-size').forEach((e) => {
         e.addEventListener('click', (e) => {
             newApp.onClickPenSize(e);
@@ -19,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     tool_color_picker.addEventListener('click', () => {
-        newApp.onPickColor();
+        newApp.newColorPalette.buildGradiant();
     });
 
     canvas.addEventListener('mousedown', (e) => {
@@ -45,7 +47,17 @@ document.addEventListener('DOMContentLoaded', () => {
         };
     });
 
+    palette.addEventListener('click', (e) => {
+        newApp.newPen.color = newApp.newColorPalette.onClick(e);
+    });
+
 });
+
+
+
+
+
+
 
 
 // installer un gestionnaire d'event dans lequel

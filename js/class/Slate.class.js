@@ -1,25 +1,15 @@
-import Program from "../class/Program.class.js";
-import Pen from "../class/Pen.class.js";
-import ColorPalette from "../class/ColorPalette.class.js";
-
 class Slate {
-    // le constructor reçoit un argument
-    constructor() {
 
+    constructor() {
+        
         this.context = canvas.getContext("2d");
         this.isDrawing = false;
         this.position = {
             x: 0,
             y: 0
         };
-
-        // au début, on ne sait pas où se trouve la souris (currentLocation)
-        // installer les écouteur lié à la souris
-        // au début on dessine pas (isDrawing)
-        // récupération du canvas, du context
-        // stockage de l'objet crayon
     };
-
+    
     draw(x2, y2, color, size) {
         this.context.beginPath();
         this.context.strokeStyle = color;
@@ -33,11 +23,13 @@ class Slate {
     clear() {
         this.context.clearRect(0, 0, canvas.width, canvas.height);
     };
-
-    getMouseLocation() {
-        // méthodes sur la gestion de la souris
-        //...
-    };
 };
 
 export default Slate;
+
+
+        // au début, on ne sait pas où se trouve la souris (currentLocation)
+        // installer les écouteur lié à la souris
+        // au début on dessine pas (isDrawing)
+        // récupération du canvas, du context
+        // stockage de l'objet crayon

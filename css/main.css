@@ -39,6 +39,7 @@ main {
 }
 
 
+
 /********************** CLASSES GENERALES **********************/
 
 .hide {
@@ -98,7 +99,6 @@ main {
 .pen-color+.pen-color {
     margin-left: 1em;
 }
-
 
 /********************** ARDOISE **********************/
 
