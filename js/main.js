@@ -1,36 +1,48 @@
 import Program from "./class/Program.class.js";
-import Slate from "./class/Slate.class.js";
-import ColorPalette from "./class/ColorPalette.class.js";
-import Pen from "./class/Pen.class.js";
 
 document.addEventListener('DOMContentLoaded', () => {
     const newApp = new Program();
 
-    document.addEventListener('click', (e) => {
-        newApp.onClickPenColor(e);
+    document.querySelectorAll('.pen-color').forEach((e) => {
+        e.addEventListener('click', (e) => {
+            newApp.onClickPenColor(e);
+        });
+    });
+    document.querySelectorAll('.pen-size').forEach((e) => {
+        e.addEventListener('click', (e) => {
+            newApp.onClickPenSize(e);
+        });
+    });
+
+    tool_clear_canvas.addEventListener('click', () => {
+        newApp.newSlate.clear();
+    });
+
+    tool_color_picker.addEventListener('click', () => {
+        newApp.onPickColor();
     });
 
     canvas.addEventListener('mousedown', (e) => {
-       newApp.zoneDraw.position.x = e.offsetX;
-        newApp.zoneDraw.position.y = e.offsetY;
-        newApp.zoneDraw.isDrawing = true; 
+        newApp.newSlate.position.x = e.offsetX;
+        newApp.newSlate.position.y = e.offsetY;
+        newApp.newSlate.isDrawing = true;
     });
 
     canvas.addEventListener('mousemove', (e) => {
-        if (newApp.zoneDraw.isDrawing === true) {
-            newApp.zoneDraw.drawLine(newApp.zoneDraw.context, newApp.zoneDraw.position.x, newApp.zoneDraw.position.y, e.offsetX, e.offsetY, newApp.onClickPenColor(e), newApp.myPen.size);
-            newApp.zoneDraw.position.x = e.offsetX;
-            newApp.zoneDraw.position.y = e.offsetY;
+        if (newApp.newSlate.isDrawing === true) {
+            newApp.newSlate.draw(e.offsetX, e.offsetY, newApp.newPen.color, newApp.newPen.size);
+            newApp.newSlate.position.x = e.offsetX;
+            newApp.newSlate.position.y = e.offsetY;
         };
     });
 
-    body.addEventListener('mouseup', e => {
-        if (newApp.zoneDraw.isDrawing === true) {
-            newApp.zoneDraw.drawLine(newApp.zoneDraw.context, newApp.zoneDraw.position.x, newApp.zoneDraw.position.y, e.offsetX, e.offsetY, newApp.onClickPenColor(e), newApp.myPen.size);
-            newApp.zoneDraw.position.x = 0;
-            newApp.zoneDraw.position.y = 0;
-            newApp.zoneDraw.isDrawing = false;
-        }
+    body.addEventListener('mouseup', (e) => {
+        if (newApp.newSlate.isDrawing === true) {
+            newApp.newSlate.draw(e.offsetX, e.offsetY, newApp.newPen.color, newApp.newPen.size);
+            newApp.newSlate.position.x = 0;
+            newApp.newSlate.position.y = 0;
+            newApp.newSlate.isDrawing = false;
+        };
     });
 
 });

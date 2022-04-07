@@ -3,53 +3,62 @@ import ColorPalette from "../class/ColorPalette.class.js";
 import Slate from "../class/Slate.class.js";
 
 class Program {
+    constructor() {
 
-    constructor(){
+        this.newSlate = new Slate();
+        this.newPen = new Pen();
+        this.newColorPalette = new ColorPalette();
+
         // instancier 3 propriétés :
-        // - ColorPalette
-        // - Pen
-        // - Slate
-
-        this.zoneDraw = new Slate();
-        this.myPen = new Pen();
-        this.colorSelector = new ColorPalette();
-        
-        
-
-
-    }
-
-    // écouter sur la pipette pur display la palette de dégradé
-    
-    // méthodes:
+        // - ColorPalette - Pen - Slate
+    };
 
     onClickPenColor(e) {
-        console.log(e.path[0].attributes[1].textContent)
-        return e.path[0].attributes[1].textContent
-    }
-
-    onClickPenSize(){
-
-    }
-
-    onPickColor(){
-        
-    }
-
-    start(){
+        this.newPen.color = e.path[0].attributes[1].textContent;
+        // console.log(e.path[0].attributes[1].textContent)
+    };
+    onClickPenSize(e) {
+        this.newPen.size = e.path[0].attributes[1].textContent;
+        // console.log(e.path[0].attributes[1].textContent)
+    };
+    onPickColor() {
+        // écouter sur la pipette pur display la palette de dégradé  
+    };
+    start() {
         // installer des écouteurs sur les outils et de configuration
-
-
-
-
         // y'aura un gestionnaire d'evenement custom à créer (à ne pas faire tout de suite FFS !)
-
-    }
-
-
+    };
 };
 
 export default Program;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 // Un booléen qui, lorsqu'il est vrai, indique que le déplacement de
 // la souris entraîne un dessin sur le canevas

@@ -5,45 +5,30 @@ import Slate from "../class/Slate.class.js";
 class ColorPalette {
 
     constructor(canvas, context) {
-        // récupérer le canvas/context
-        this.context = this.context;
+        this.context = context;
         this.canvas = canvas;
-        // initialiser une proriété rgb (objet ??)
+        this.buildGradiant();
         this.rgb = {
             r: 0,
             g: 0,
             b: 0
         };
+
+        // récupérer le canvas/context
+        // initialiser une proriété rgb (objet ??)
         // installer l'écouteur sur la ColorPalette
-        
-
         // appeler la methode pour Build() la palette
-        this.buildGradiant()
-
     }
 
-    // méthode de construction graphique de la palette de couleurs
     buildGradiant() {
-
-
-
-
+        // méthode de construction graphique de la palette de couleurs
     }
 
-    // getter pour récuperer la .pickedColor
-    // ...
-
-
-    // méthode de gestion de click sur la palette
     onClick() {
-
-
-
+        // getter pour récuperer la .pickedColor
+        // ...
+        // méthode de gestion de click sur la palette
     }
-
-
-
-
 };
 
 export default ColorPalette;
