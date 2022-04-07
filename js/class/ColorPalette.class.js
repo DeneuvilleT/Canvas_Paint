@@ -1,7 +1,3 @@
-import Program from "../class/Program.class.js";
-import Pen from "../class/Pen.class.js";
-import Slate from "../class/Slate.class.js";
-
 class ColorPalette {
 
     constructor() {
@@ -33,7 +29,7 @@ class ColorPalette {
         this.context.fillRect(0, 0, 256, 256);
     };
 
-    onClick(e) {
+    onClickPalet(e) {
 
         this.dataImage = this.context.getImageData(e.offsetX, e.offsetY, 256, 256);
         this.rgb.r = this.dataImage.data[0];
@@ -46,10 +42,3 @@ class ColorPalette {
 };
 
 export default ColorPalette;
-
-
-
-        // récupérer le canvas/context
-        // initialiser une proriété rgb (objet ??)
-        // installer l'écouteur sur la ColorPalette
-        // appeler la methode pour Build() la palette

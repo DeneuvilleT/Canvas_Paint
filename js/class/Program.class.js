@@ -6,28 +6,68 @@ import Slate from "../class/Slate.class.js";
 class Program {
     constructor() {
 
-        this.newPen = new Pen();
-        this.newSlate = new Slate();
+        this.pen = new Pen();
+        this.newSlate = new Slate(this.pen);
         this.newColorPalette = new ColorPalette();
+        this.lunchApp();
     };
 
     onClickPenColor(e) {
-        this.newPen.color = e.path[0].attributes[1].textContent;
+        this.pen.color = e.path[0].attributes[1].textContent;
     };
     onClickPenSize(e) {
-        this.newPen.size = e.path[0].attributes[1].textContent;
+        this.pen.size = e.path[0].attributes[1].textContent;
+    };
+
+    lunchApp() {
+
+        this.newSlate.canvas.addEventListener('mousedown', (e) => {
+            this.newSlate.position.x = e.offsetX;
+            this.newSlate.position.y = e.offsetY;
+            this.newSlate.isDrawing = true;
+        });
+
+        this.newSlate.canvas.addEventListener('mousemove', (e) => {
+            if (this.newSlate.isDrawing === true) {
+                this.newSlate.draw(e.offsetX, e.offsetY);
+                this.newSlate.position.x = e.offsetX;
+                this.newSlate.position.y = e.offsetY;
+            };
+        });
+
+        document.querySelectorAll('.pen-color').forEach((e) => {
+            e.addEventListener('click', (e) => {
+                this.onClickPenColor(e);
+            });
+        });
+
+        document.querySelectorAll('.pen-size').forEach((e) => {
+            e.addEventListener('click', (e) => {
+                this.onClickPenSize(e);
+            });
+        });
+
+        tool_clear_canvas.addEventListener('click', () => {
+            this.newSlate.clear();
+        });
+
+        tool_color_picker.addEventListener('click', () => {
+            this.newColorPalette.buildGradiant();
+        });
+
+        body.addEventListener('mouseup', (e) => {
+            if (this.newSlate.isDrawing === true) {
+                this.newSlate.draw(e.offsetX, e.offsetY);
+                this.newSlate.position.x = 0;
+                this.newSlate.position.y = 0;
+                this.newSlate.isDrawing = false;
+            };
+        });
+
+        palette.addEventListener('click', (e) => {
+            this.pen.color = this.newColorPalette.onClickPalet(e);
+        });
     };
 };
 
 export default Program;
-
-
-
-/*onPickColor() {
-    // écouter sur la pipette pur display la palette de dégradé
-    
-};*/
-/*start() {
-    // installer des écouteurs sur les outils et de configuration
-    // y'aura un gestionnaire d'evenement custom à créer (à ne pas faire tout de suite FFS !)
-};*/
