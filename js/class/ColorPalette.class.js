@@ -38,6 +38,5 @@ export default class ColorPalette {
 
         return `rgb(${this.rgb.r},${this.rgb.g},${this.rgb.b})`;
     };
-
 };
 

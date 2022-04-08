@@ -5,12 +5,11 @@
 }
 
 body {
-    /* structure */
+
     margin: 0 auto;
     min-height: 100%;
     width: 80%;
 
-    /* presentation */
     background-color: #ECF0F1;
     font-family: 'Open Sans', sans-serif;
 }

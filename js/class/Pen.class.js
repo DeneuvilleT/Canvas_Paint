@@ -3,6 +3,7 @@ export default class Pen {
 
         this.color = color
         this.size = size;
+        
     };
 };
 

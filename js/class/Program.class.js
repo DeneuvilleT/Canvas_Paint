@@ -2,7 +2,6 @@ import Pen from "../class/Pen.class.js";
 import ColorPalette from "../class/ColorPalette.class.js";
 import Slate from "../class/Slate.class.js";
 
-
 export default class Program {
     constructor() {
 

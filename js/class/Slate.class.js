@@ -1,6 +1,7 @@
 export default class Slate {
 
     constructor(newPen) {
+        
         this.newPen = newPen;
         this.canvas = canvas
         this.context = this.canvas.getContext("2d");
