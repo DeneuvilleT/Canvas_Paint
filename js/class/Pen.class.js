@@ -1,4 +1,4 @@
-class Pen {
+export default class Pen {
     constructor(color, size) {
 
         this.color = color
@@ -6,4 +6,3 @@ class Pen {
     };
 };
 
-export default Pen;

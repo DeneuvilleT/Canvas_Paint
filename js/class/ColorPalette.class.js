@@ -1,4 +1,4 @@
-class ColorPalette {
+export default class ColorPalette {
 
     constructor() {
 
@@ -31,7 +31,7 @@ class ColorPalette {
 
     onClickPalet(e) {
 
-        this.dataImage = this.context.getImageData(e.offsetX, e.offsetY, 256, 256);
+        this.dataImage = this.context.getImageData(e.offsetX, e.offsetY, 1, 1);
         this.rgb.r = this.dataImage.data[0];
         this.rgb.g = this.dataImage.data[1];
         this.rgb.b = this.dataImage.data[2];
@@ -41,4 +41,3 @@ class ColorPalette {
 
 };
 
-export default ColorPalette;

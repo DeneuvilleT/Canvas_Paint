@@ -1,6 +1,4 @@
-import Pen from "./Pen.class.js";
-
-class Slate {
+export default class Slate {
 
     constructor(newPen) {
         this.newPen = newPen;
@@ -28,4 +26,3 @@ class Slate {
     };
 };
 
-export default Slate;

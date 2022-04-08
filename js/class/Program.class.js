@@ -3,7 +3,7 @@ import ColorPalette from "../class/ColorPalette.class.js";
 import Slate from "../class/Slate.class.js";
 
 
-class Program {
+export default class Program {
     constructor() {
 
         this.newPen = new Pen();
@@ -70,4 +70,3 @@ class Program {
     };
 };
 
-export default Program;
